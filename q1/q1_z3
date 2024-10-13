@@ -4,6 +4,5 @@
 (define-fun formula () Bool
    (not (=> (and p (=> p q)) q) ) )
 (assert formula)
-(apply tseitin-cnf)
 
 (check-sat)
