@@ -1,0 +1,9 @@
+(declare-const p Bool)
+(declare-const q Bool)
+(set-option :produce-unsat-cores true)
+(define-fun formula () Bool
+   (not (=> (and p (=> p q)) q) ) )
+(assert formula)
+(apply tseitin-cnf)
+
+(check-sat)
