@@ -1,10 +1,10 @@
 (declare-const p Bool)
 (declare-const q Bool)
 (declare-const r Bool)
-(define-fun formula () Bool
+(define-fun phi () Bool
     (and (or q (not r)) (or (not p) r) (or (not p) r p) (or p q (not q)) (or (not r) q))
 )
-(assert formula)
+(assert phi)
 
 (check-sat)
 (get-model)

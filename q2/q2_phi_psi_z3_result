@@ -1,0 +1,17 @@
+sat
+(
+  (define-fun q () Bool
+    false)
+  (define-fun p () Bool
+    true)
+  (define-fun r () Bool
+    false)
+  (define-fun phi () Bool
+    (and (or q (not r)) (or (not p) r) (or (not p) r p)))
+  (define-fun psi () Bool
+    (and (or q (not r))
+     (or (not p) r)
+     (or (not p) r p)
+     (or (not p) q)
+     (or (not q) r)))
+)

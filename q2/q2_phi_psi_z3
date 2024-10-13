@@ -1,0 +1,13 @@
+(declare-const p Bool)
+(declare-const q Bool)
+(declare-const r Bool)
+(define-fun phi () Bool
+    (and (or q (not r)) (or (not p) r) (or (not p) r p))
+)
+(define-fun psi() Bool
+    (and (or q (not r)) (or (not p) r) (or (not p) r p) (or (not p) q) (or (not q) r))
+)
+(assert (and (or (not phi) psi) (or (not psi) phi)) )
+
+(check-sat)
+(get-model)
